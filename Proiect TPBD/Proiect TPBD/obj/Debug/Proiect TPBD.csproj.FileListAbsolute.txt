@@ -8,3 +8,4 @@ C:\Users\Ioana\Documents\Visual Studio 2015\Projects\proiect-TPBD\Proiect TPBD\P
 C:\Users\Ioana\Documents\Visual Studio 2015\Projects\proiect-TPBD\Proiect TPBD\Proiect TPBD\obj\Debug\Proiect TPBD.exe
 C:\Users\Ioana\Documents\Visual Studio 2015\Projects\proiect-TPBD\Proiect TPBD\Proiect TPBD\obj\Debug\Proiect TPBD.pdb
 C:\Users\Ioana\Documents\Visual Studio 2015\Projects\proiect-TPBD\Proiect TPBD\Proiect TPBD\obj\Debug\Proiect TPBD.csprojResolveAssemblyReference.cache
+C:\Users\Ioana\Documents\Visual Studio 2015\Projects\proiect-TPBD\Proiect TPBD\Proiect TPBD\obj\Debug\Proiect_TPBD.FormProcente.resources

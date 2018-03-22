@@ -42,9 +42,9 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonAjutor = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton_modificare_procente = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonIesire = new System.Windows.Forms.ToolStripButton();
             this.sALARIIDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +63,7 @@
             this.salvare_actualizare = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.adaugare_angajat = new System.Windows.Forms.TabPage();
+            this.anulare_adaugare = new System.Windows.Forms.Button();
             this.textBoxCale = new System.Windows.Forms.TextBox();
             this.button_adaugare_angajat = new System.Windows.Forms.Button();
             this.cauta_imagine = new System.Windows.Forms.Button();
@@ -81,13 +82,52 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.stergere_angajati = new System.Windows.Forms.TabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBoxCautaAngajat3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button_stergere_angajat = new System.Windows.Forms.Button();
+            this.sALARIIDataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxCautaAngajat2 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.sALARIIDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.sALARIITableAdapter = new Proiect_TPBD.DataSet1TableAdapters.SALARIITableAdapter();
             this.tableAdapterManager = new Proiect_TPBD.DataSet1TableAdapters.TableAdapterManager();
             this.mesaje = new System.Windows.Forms.TextBox();
-            this.anulare_adaugare = new System.Windows.Forms.Button();
-            this.stergere_angajati = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.sALARIIBindingNavigator)).BeginInit();
             this.sALARIIBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sALARIIBindingSource)).BeginInit();
@@ -97,6 +137,12 @@
             this.actualizare_date.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.adaugare_angajat.SuspendLayout();
+            this.stergere_angajati.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALARIIDataGridView2)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALARIIDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // sALARIIBindingNavigator
@@ -116,9 +162,9 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.toolStripButton1,
+            this.toolStripButtonAjutor,
             this.toolStripButton_modificare_procente,
-            this.toolStripButton2});
+            this.toolStripButtonIesire});
             this.sALARIIBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.sALARIIBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.sALARIIBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -126,7 +172,7 @@
             this.sALARIIBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.sALARIIBindingNavigator.Name = "sALARIIBindingNavigator";
             this.sALARIIBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.sALARIIBindingNavigator.Size = new System.Drawing.Size(1503, 27);
+            this.sALARIIBindingNavigator.Size = new System.Drawing.Size(1543, 27);
             this.sALARIIBindingNavigator.TabIndex = 0;
             this.sALARIIBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -207,14 +253,15 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton1
+            // toolStripButtonAjutor
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(54, 24);
-            this.toolStripButton1.Text = "Ajutor";
+            this.toolStripButtonAjutor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonAjutor.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAjutor.Image")));
+            this.toolStripButtonAjutor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonAjutor.Name = "toolStripButtonAjutor";
+            this.toolStripButtonAjutor.Size = new System.Drawing.Size(54, 24);
+            this.toolStripButtonAjutor.Text = "Ajutor";
+            this.toolStripButtonAjutor.Click += new System.EventHandler(this.toolStripButtonAjutor_Click);
             // 
             // toolStripButton_modificare_procente
             // 
@@ -224,15 +271,17 @@
             this.toolStripButton_modificare_procente.Name = "toolStripButton_modificare_procente";
             this.toolStripButton_modificare_procente.Size = new System.Drawing.Size(148, 24);
             this.toolStripButton_modificare_procente.Text = "Modificare procente";
+            this.toolStripButton_modificare_procente.Click += new System.EventHandler(this.toolStripButton_modificare_procente_Click);
             // 
-            // toolStripButton2
+            // toolStripButtonIesire
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(48, 24);
-            this.toolStripButton2.Text = "Iesire";
+            this.toolStripButtonIesire.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonIesire.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonIesire.Image")));
+            this.toolStripButtonIesire.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonIesire.Name = "toolStripButtonIesire";
+            this.toolStripButtonIesire.Size = new System.Drawing.Size(48, 24);
+            this.toolStripButtonIesire.Text = "Iesire";
+            this.toolStripButtonIesire.Click += new System.EventHandler(this.toolStripButtonIesire_Click);
             // 
             // sALARIIDataGridView
             // 
@@ -320,7 +369,8 @@
             this.tabControl1.Controls.Add(this.stergere_angajati);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(90, 58);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1453, 491);
@@ -417,6 +467,16 @@
             this.adaugare_angajat.TabIndex = 1;
             this.adaugare_angajat.Text = "Adaugare angajat";
             this.adaugare_angajat.UseVisualStyleBackColor = true;
+            // 
+            // anulare_adaugare
+            // 
+            this.anulare_adaugare.Location = new System.Drawing.Point(791, 316);
+            this.anulare_adaugare.Name = "anulare_adaugare";
+            this.anulare_adaugare.Size = new System.Drawing.Size(153, 36);
+            this.anulare_adaugare.TabIndex = 19;
+            this.anulare_adaugare.Text = "Anulare";
+            this.anulare_adaugare.UseVisualStyleBackColor = true;
+            this.anulare_adaugare.Click += new System.EventHandler(this.anulare_adaugare_Click);
             // 
             // textBoxCale
             // 
@@ -570,6 +630,383 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nume";
             // 
+            // stergere_angajati
+            // 
+            this.stergere_angajati.Controls.Add(this.pictureBox3);
+            this.stergere_angajati.Controls.Add(this.textBoxCautaAngajat3);
+            this.stergere_angajati.Controls.Add(this.label11);
+            this.stergere_angajati.Controls.Add(this.button_stergere_angajat);
+            this.stergere_angajati.Controls.Add(this.sALARIIDataGridView2);
+            this.stergere_angajati.Location = new System.Drawing.Point(4, 25);
+            this.stergere_angajati.Name = "stergere_angajati";
+            this.stergere_angajati.Size = new System.Drawing.Size(1445, 462);
+            this.stergere_angajati.TabIndex = 2;
+            this.stergere_angajati.Text = "Stergere Angajati";
+            this.stergere_angajati.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(1279, 108);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(145, 151);
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
+            // 
+            // textBoxCautaAngajat3
+            // 
+            this.textBoxCautaAngajat3.Location = new System.Drawing.Point(473, 33);
+            this.textBoxCautaAngajat3.Name = "textBoxCautaAngajat3";
+            this.textBoxCautaAngajat3.Size = new System.Drawing.Size(284, 22);
+            this.textBoxCautaAngajat3.TabIndex = 4;
+            this.textBoxCautaAngajat3.TextChanged += new System.EventHandler(this.textBoxCautaAngajat3_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(276, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(175, 17);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Cauta angajat dupa nume:";
+            // 
+            // button_stergere_angajat
+            // 
+            this.button_stergere_angajat.Location = new System.Drawing.Point(523, 348);
+            this.button_stergere_angajat.Name = "button_stergere_angajat";
+            this.button_stergere_angajat.Size = new System.Drawing.Size(168, 39);
+            this.button_stergere_angajat.TabIndex = 1;
+            this.button_stergere_angajat.Text = "Sterge angajat";
+            this.button_stergere_angajat.UseVisualStyleBackColor = true;
+            this.button_stergere_angajat.Click += new System.EventHandler(this.button_stergere_angajat_Click);
+            // 
+            // sALARIIDataGridView2
+            // 
+            this.sALARIIDataGridView2.AllowUserToAddRows = false;
+            this.sALARIIDataGridView2.AutoGenerateColumns = false;
+            this.sALARIIDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sALARIIDataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewTextBoxColumn37,
+            this.dataGridViewTextBoxColumn38,
+            this.dataGridViewTextBoxColumn39});
+            this.sALARIIDataGridView2.DataSource = this.sALARIIBindingSource;
+            this.sALARIIDataGridView2.Location = new System.Drawing.Point(38, 72);
+            this.sALARIIDataGridView2.Name = "sALARIIDataGridView2";
+            this.sALARIIDataGridView2.ReadOnly = true;
+            this.sALARIIDataGridView2.RowTemplate.Height = 24;
+            this.sALARIIDataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.sALARIIDataGridView2.Size = new System.Drawing.Size(1220, 256);
+            this.sALARIIDataGridView2.TabIndex = 0;
+            this.sALARIIDataGridView2.SelectionChanged += new System.EventHandler(this.sALARIIDataGridView2_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "NR_CRT";
+            this.dataGridViewTextBoxColumn25.HeaderText = "NR_CRT";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "NUME";
+            this.dataGridViewTextBoxColumn26.HeaderText = "NUME";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "PRENUME";
+            this.dataGridViewTextBoxColumn27.HeaderText = "PRENUME";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "FUNCTIE";
+            this.dataGridViewTextBoxColumn28.HeaderText = "FUNCTIE";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "POZA";
+            this.dataGridViewTextBoxColumn29.HeaderText = "POZA";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "SALAR_BAZA";
+            this.dataGridViewTextBoxColumn30.HeaderText = "SALAR_BAZA";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "SPOR";
+            this.dataGridViewTextBoxColumn31.HeaderText = "SPOR";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "PREMII_BRUTE";
+            this.dataGridViewTextBoxColumn32.HeaderText = "PREMII_BRUTE";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "TOTAL_BRUT";
+            this.dataGridViewTextBoxColumn33.HeaderText = "TOTAL_BRUT";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "BRUT_IMPOZABIL";
+            this.dataGridViewTextBoxColumn34.HeaderText = "BRUT_IMPOZABIL";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "IMPOZIT";
+            this.dataGridViewTextBoxColumn35.HeaderText = "IMPOZIT";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "CAS";
+            this.dataGridViewTextBoxColumn36.HeaderText = "CAS";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "CASS";
+            this.dataGridViewTextBoxColumn37.HeaderText = "CASS";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "RETINERI";
+            this.dataGridViewTextBoxColumn38.HeaderText = "RETINERI";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn39
+            // 
+            this.dataGridViewTextBoxColumn39.DataPropertyName = "VIRAT_CARD";
+            this.dataGridViewTextBoxColumn39.HeaderText = "VIRAT_CARD";
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            this.dataGridViewTextBoxColumn39.ReadOnly = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.textBoxCautaAngajat2);
+            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Controls.Add(this.sALARIIDataGridView1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1445, 462);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Afisare salarii";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(211, 62);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(175, 17);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Cauta angajat dupa nume:";
+            // 
+            // textBoxCautaAngajat2
+            // 
+            this.textBoxCautaAngajat2.Location = new System.Drawing.Point(453, 62);
+            this.textBoxCautaAngajat2.Name = "textBoxCautaAngajat2";
+            this.textBoxCautaAngajat2.Size = new System.Drawing.Size(233, 22);
+            this.textBoxCautaAngajat2.TabIndex = 2;
+            this.textBoxCautaAngajat2.TextChanged += new System.EventHandler(this.textBoxCautaAngajat2_TextChanged_1);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(784, 22);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(131, 110);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // sALARIIDataGridView1
+            // 
+            this.sALARIIDataGridView1.AllowUserToAddRows = false;
+            this.sALARIIDataGridView1.AutoGenerateColumns = false;
+            this.sALARIIDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sALARIIDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24});
+            this.sALARIIDataGridView1.DataSource = this.sALARIIBindingSource;
+            this.sALARIIDataGridView1.Location = new System.Drawing.Point(22, 149);
+            this.sALARIIDataGridView1.Name = "sALARIIDataGridView1";
+            this.sALARIIDataGridView1.ReadOnly = true;
+            this.sALARIIDataGridView1.RowTemplate.Height = 24;
+            this.sALARIIDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.sALARIIDataGridView1.Size = new System.Drawing.Size(1393, 295);
+            this.sALARIIDataGridView1.TabIndex = 0;
+            this.sALARIIDataGridView1.SelectionChanged += new System.EventHandler(this.sALARIIDataGridView1_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NR_CRT";
+            this.dataGridViewTextBoxColumn9.HeaderText = "NR_CRT";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "NUME";
+            this.dataGridViewTextBoxColumn10.HeaderText = "NUME";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "PRENUME";
+            this.dataGridViewTextBoxColumn11.HeaderText = "PRENUME";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "FUNCTIE";
+            this.dataGridViewTextBoxColumn12.HeaderText = "FUNCTIE";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "POZA";
+            this.dataGridViewTextBoxColumn13.HeaderText = "POZA";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "SALAR_BAZA";
+            this.dataGridViewTextBoxColumn15.HeaderText = "SALAR_BAZA";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "SPOR";
+            this.dataGridViewTextBoxColumn16.HeaderText = "SPOR";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "PREMII_BRUTE";
+            this.dataGridViewTextBoxColumn17.HeaderText = "PREMII_BRUTE";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "TOTAL_BRUT";
+            this.dataGridViewTextBoxColumn18.HeaderText = "TOTAL_BRUT";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "BRUT_IMPOZABIL";
+            this.dataGridViewTextBoxColumn19.HeaderText = "BRUT_IMPOZABIL";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "IMPOZIT";
+            this.dataGridViewTextBoxColumn20.HeaderText = "IMPOZIT";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "CAS";
+            this.dataGridViewTextBoxColumn21.HeaderText = "CAS";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "CASS";
+            this.dataGridViewTextBoxColumn22.HeaderText = "CASS";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "RETINERI";
+            this.dataGridViewTextBoxColumn23.HeaderText = "RETINERI";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "VIRAT_CARD";
+            this.dataGridViewTextBoxColumn24.HeaderText = "VIRAT_CARD";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1445, 462);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Stat plata";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1445, 462);
+            this.tabPage3.TabIndex = 5;
+            this.tabPage3.Text = "Fluturasi";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // sALARIITableAdapter
             // 
             this.sALARIITableAdapter.ClearBeforeFill = true;
@@ -594,48 +1031,11 @@
             this.mesaje.TabIndex = 3;
             this.mesaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // anulare_adaugare
-            // 
-            this.anulare_adaugare.Location = new System.Drawing.Point(791, 316);
-            this.anulare_adaugare.Name = "anulare_adaugare";
-            this.anulare_adaugare.Size = new System.Drawing.Size(153, 36);
-            this.anulare_adaugare.TabIndex = 19;
-            this.anulare_adaugare.Text = "Anulare";
-            this.anulare_adaugare.UseVisualStyleBackColor = true;
-            this.anulare_adaugare.Click += new System.EventHandler(this.anulare_adaugare_Click);
-            // 
-            // stergere_angajati
-            // 
-            this.stergere_angajati.Location = new System.Drawing.Point(4, 25);
-            this.stergere_angajati.Name = "stergere_angajati";
-            this.stergere_angajati.Size = new System.Drawing.Size(1445, 462);
-            this.stergere_angajati.TabIndex = 2;
-            this.stergere_angajati.Text = "Stergere Angajati";
-            this.stergere_angajati.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1445, 462);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Afisare salarii";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1445, 462);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Stat plata";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1503, 656);
+            this.ClientSize = new System.Drawing.Size(1543, 656);
             this.Controls.Add(this.mesaje);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.sALARIIBindingNavigator);
@@ -654,6 +1054,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.adaugare_angajat.ResumeLayout(false);
             this.adaugare_angajat.PerformLayout();
+            this.stergere_angajati.ResumeLayout(false);
+            this.stergere_angajati.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALARIIDataGridView2)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sALARIIDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,9 +1084,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView sALARIIDataGridView;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonAjutor;
         private System.Windows.Forms.ToolStripButton toolStripButton_modificare_procente;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButtonIesire;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage actualizare_date;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -719,6 +1127,46 @@
         private System.Windows.Forms.TabPage stergere_angajati;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridView sALARIIDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxCautaAngajat2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TextBox textBoxCautaAngajat3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button_stergere_angajat;
+        private System.Windows.Forms.DataGridView sALARIIDataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
     }
 }
 

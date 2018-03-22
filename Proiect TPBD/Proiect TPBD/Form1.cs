@@ -39,6 +39,7 @@ namespace Proiect_TPBD
             }
         }
 
+
         private void salvare_actualizare_Click(object sender, EventArgs e)
         {
             mesaje.Text = "";
@@ -52,7 +53,7 @@ namespace Proiect_TPBD
             {
                 mesaje.Text = "Nu s-a putut realiza salvare in baza de date";
             }
-           
+
         }
 
         private void cauta_imagine_Click(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace Proiect_TPBD
             {
                 mesaje.Text = "Nu s-a putut incarca imaginea angajatului";
             }
-           
+
         }
 
         private void button_adaugare_angajat_Click(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace Proiect_TPBD
             {
                 mesaje.Text = "Atentie: Angajatul nu a putut fi adaugat in baza de date!";
             }
-          
+
         }
 
         private void sALARIIDataGridView_SelectionChanged(object sender, EventArgs e)
@@ -133,12 +134,11 @@ namespace Proiect_TPBD
                     }
                 }
             }
-           catch
+            catch
             {
-                mesaje.Text = "Angajatul nu are fotografie";
                 pictureBox1.Image = null;
             }
-               
+
         }
 
         private void TextBoxCautaAngajat_TextChanged(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace Proiect_TPBD
             {
                 mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
             }
-          
+
         }
 
         private void anulare_adaugare_Click(object sender, EventArgs e)
@@ -181,6 +181,150 @@ namespace Proiect_TPBD
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
             mesaje.Text = "";
+            sALARIIBindingSource.Filter = String.Empty;
+        }
+
+        private void textBoxCautaAngajat2_TextChanged_1(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            try
+            {
+                string angajat_cautat = "nume like" + "'" + textBoxCautaAngajat2.Text + "*'";
+                sALARIIBindingSource.Filter = angajat_cautat;
+            }
+            catch
+            {
+                mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
+            }
+        }
+
+        private void textBoxCautaAngajat3_TextChanged(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            try
+            {
+                string angajat_cautat = "nume like" + "'" + textBoxCautaAngajat3.Text + "*'";
+                sALARIIBindingSource.Filter = angajat_cautat;
+            }
+            catch
+            {
+                mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
+            }
+        }
+
+        private void sALARIIDataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            try
+            {
+                if (sALARIIDataGridView1.SelectedRows.Count > 0)
+                {
+                    mesaje.Text = "";
+                    string img = sALARIIDataGridView1.Rows[sALARIIDataGridView1.SelectedRows[0].Index].Cells[4].Value.ToString();
+                    if (img != null)
+                    {
+                        pictureBox2.Image = Image.FromFile(img);
+                        pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+            }
+            catch
+            {
+                pictureBox2.Image = null;
+            }
+        }
+
+        string nr_crt_selectat = String.Empty;
+
+        #region DataGridView Stergere angajat
+        private void sALARIIDataGridView2_SelectionChanged(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            try
+            {
+                if (sALARIIDataGridView2.SelectedRows.Count > 0)
+                {
+                    string img = sALARIIDataGridView2.Rows[sALARIIDataGridView2.SelectedRows[0].Index].Cells[4].Value.ToString();
+                    nr_crt_selectat = sALARIIDataGridView2.Rows[sALARIIDataGridView2.SelectedRows[0].Index].Cells[0].Value.ToString();
+                    if (img != null)
+                    {
+                        pictureBox3.Image = Image.FromFile(img);
+                        pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+            }
+            catch
+            {
+                pictureBox3.Image = null;
+            }
+        }
+        #endregion
+
+        #region stergere_angajat
+        private void button_stergere_angajat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (nr_crt_selectat != string.Empty)
+                {
+                    if (MessageBox.Show("Sunteti siguri ca doriti sa stergeti?", "Confirmare stergere", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        conn.Open();
+                        strSQL = "DELETE FROM salarii WHERE nr_crt = :p1";
+                        cmd = new OracleCommand(strSQL, conn);
+                        cmd.BindByName = true;
+
+                        cmd.Parameters.Add("p1", nr_crt_selectat);
+
+                        da.DeleteCommand = cmd;
+                        da.DeleteCommand.ExecuteNonQuery();
+
+                        conn.Close();
+
+                        sALARIITableAdapter.Dispose();
+                        this.sALARIITableAdapter.Fill(this.dataSet1.SALARII);
+
+                        mesaje.Text = "Stergerea angajatului s-a efectuat cu succes.";
+                    }
+                }
+                else
+                    mesaje.Text = "Nu ati selectat un angajat.";
+            }
+            catch (Exception)
+            {
+                mesaje.Text = "Nu s-a putut efectua stergerea.";
+            }
+        }
+
+        #endregion
+
+        #region ajutor
+        private void toolStripButtonAjutor_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 0)
+                mesaje.Text = "Cautati un angajat dupa nume, modificati datele si apasati pe butonul de salvare.";
+            else if (tabControl1.SelectedIndex == 1)
+                mesaje.Text = "Introduceti datele corespunzatoare unui nou angajat si apasati butonul de salvare.";
+            else if (tabControl1.SelectedIndex == 2)
+                mesaje.Text = "Selectati un angajat si apasati buton sterge angajat daca doriti stergarea lui din baza de date.";
+            else if (tabControl1.SelectedIndex == 3)
+                mesaje.Text = "Afisarea tuturor angajatilor si a salariilor acestora. Se poate cauta un angajat dupa nume.";
+            else if (tabControl1.SelectedIndex == 4)
+                mesaje.Text = "De aici puteti genera statul de plata";
+            else if (tabControl1.SelectedIndex == 5)
+                mesaje.Text = "De aici puteti genera fluturasi de salariu, fie pentru toti angajatii, fie individual.";
+        }
+        #endregion
+
+        private void toolStripButtonIesire_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
+
+        private void toolStripButton_modificare_procente_Click(object sender, EventArgs e)
+        {
+            FormProcente f = new FormProcente();
+            f.Show();
         }
     }
 }
