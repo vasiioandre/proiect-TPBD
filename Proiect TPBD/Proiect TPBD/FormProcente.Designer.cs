@@ -35,14 +35,15 @@
             this.tableAdapterManager = new Proiect_TPBD.DataSet1TableAdapters.TableAdapterManager();
             this.pROCENTEDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBoxParola = new System.Windows.Forms.TextBox();
             this.button_salvare_procente = new System.Windows.Forms.Button();
             this.anulare_modificari_procente = new System.Windows.Forms.Button();
-            this.mesaje_procente = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.mesaje2 = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PAROLA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROCENTEBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pROCENTEDataGridView)).BeginInit();
@@ -77,6 +78,7 @@
             this.pROCENTEDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pROCENTEDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
+            this.PAROLA,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.pROCENTEDataGridView.DataSource = this.pROCENTEBindingSource;
@@ -84,7 +86,7 @@
             this.pROCENTEDataGridView.Name = "pROCENTEDataGridView";
             this.pROCENTEDataGridView.ReadOnly = true;
             this.pROCENTEDataGridView.RowTemplate.Height = 24;
-            this.pROCENTEDataGridView.Size = new System.Drawing.Size(460, 67);
+            this.pROCENTEDataGridView.Size = new System.Drawing.Size(454, 74);
             this.pROCENTEDataGridView.TabIndex = 1;
             // 
             // label1
@@ -96,31 +98,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Parola";
             // 
-            // textBox1
+            // textBoxParola
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(183, 22);
-            this.textBox1.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CAS";
-            this.dataGridViewTextBoxColumn2.HeaderText = "CAS";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CASS";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CASS";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "IMPOZIT";
-            this.dataGridViewTextBoxColumn4.HeaderText = "IMPOZIT";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.textBoxParola.Location = new System.Drawing.Point(161, 25);
+            this.textBoxParola.Name = "textBoxParola";
+            this.textBoxParola.Size = new System.Drawing.Size(183, 22);
+            this.textBoxParola.TabIndex = 3;
             // 
             // button_salvare_procente
             // 
@@ -142,16 +125,6 @@
             this.anulare_modificari_procente.UseVisualStyleBackColor = true;
             this.anulare_modificari_procente.Click += new System.EventHandler(this.anulare_modificari_procente_Click);
             // 
-            // mesaje_procente
-            // 
-            this.mesaje_procente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.mesaje_procente.Location = new System.Drawing.Point(62, 368);
-            this.mesaje_procente.Name = "mesaje_procente";
-            this.mesaje_procente.ReadOnly = true;
-            this.mesaje_procente.Size = new System.Drawing.Size(465, 15);
-            this.mesaje_procente.TabIndex = 6;
-            this.mesaje_procente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // buttonLogin
             // 
             this.buttonLogin.Location = new System.Drawing.Point(376, 22);
@@ -162,16 +135,56 @@
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
+            // mesaje2
+            // 
+            this.mesaje2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mesaje2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.mesaje2.Location = new System.Drawing.Point(51, 258);
+            this.mesaje2.Name = "mesaje2";
+            this.mesaje2.ReadOnly = true;
+            this.mesaje2.Size = new System.Drawing.Size(486, 20);
+            this.mesaje2.TabIndex = 8;
+            this.mesaje2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CAS";
+            this.dataGridViewTextBoxColumn2.HeaderText = "CAS";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // PAROLA
+            // 
+            this.PAROLA.DataPropertyName = "PAROLA";
+            this.PAROLA.HeaderText = "PAROLA";
+            this.PAROLA.Name = "PAROLA";
+            this.PAROLA.ReadOnly = true;
+            this.PAROLA.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CASS";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CASS";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "IMPOZIT";
+            this.dataGridViewTextBoxColumn4.HeaderText = "IMPOZIT";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
             // FormProcente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 279);
+            this.ClientSize = new System.Drawing.Size(576, 304);
+            this.Controls.Add(this.mesaje2);
             this.Controls.Add(this.buttonLogin);
-            this.Controls.Add(this.mesaje_procente);
             this.Controls.Add(this.anulare_modificari_procente);
             this.Controls.Add(this.button_salvare_procente);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxParola);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pROCENTEDataGridView);
             this.Name = "FormProcente";
@@ -193,13 +206,15 @@
         private DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView pROCENTEDataGridView;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TextBox textBoxParola;
         private System.Windows.Forms.Button button_salvare_procente;
         private System.Windows.Forms.Button anulare_modificari_procente;
         private System.Windows.Forms.TextBox mesaje_procente;
         private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.TextBox mesaje2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PAROLA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

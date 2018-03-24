@@ -17,6 +17,7 @@ namespace Proiect_TPBD
         string strSQL;
         OracleCommand cmd;
         OracleDataAdapter da;
+        DataSet2 d;
 
         public Form1()
         {
@@ -325,6 +326,69 @@ namespace Proiect_TPBD
         {
             FormProcente f = new FormProcente();
             f.Show();
+        }
+
+        #region stat plata
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                d = new DataSet2();
+                da = new OracleDataAdapter("SELECT * FROM salarii", conn);
+                da.Fill(d, "salarii");
+
+                StatPlata raport = new StatPlata();
+                raport.SetDataSource(d.Tables[0]);
+                crystalReportViewer1.ReportSource = raport;
+            }
+            catch(Exception)
+            {
+                
+            }
+        }
+
+
+        #endregion
+
+        #region fluturasi
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                d = new DataSet2();
+                Fluturasi raport = new Fluturasi();
+
+                foreach(DataGridViewRow dgv in sALARIIDataGridView3.Rows)
+                {
+                    d.SALARII.Rows.Add(dgv.Cells[0].Value, dgv.Cells[1].Value, dgv.Cells[2].Value, dgv.Cells[3].Value, dgv.Cells[4].Value,
+                        dgv.Cells[5].Value, dgv.Cells[6].Value, dgv.Cells[7].Value, dgv.Cells[8].Value, dgv.Cells[9].Value,
+                        dgv.Cells[10].Value, dgv.Cells[11].Value, dgv.Cells[12].Value, dgv.Cells[13].Value, dgv.Cells[14].Value);
+                }
+                
+                raport.SetDataSource(d);
+                crystalReportViewer2.ReportSource = raport;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        #endregion
+
+        private void textBoxStatPlata_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string angajat_cautat = "nume like" + "'" + textBoxStatPlata.Text + "*'";
+                sALARIIBindingSource.Filter = angajat_cautat;
+            }
+            catch
+            {
+                mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
+            }
         }
     }
 }
