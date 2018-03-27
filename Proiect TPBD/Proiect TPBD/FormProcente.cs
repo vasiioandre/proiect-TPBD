@@ -47,14 +47,14 @@ namespace Proiect_TPBD
 
                     }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 mesaje2.Text = "Probleme la autentificare.";
             }
                     
         }
 
-    private void button_salvare_procente_Click(object sender, EventArgs e)
+        private void button_salvare_procente_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.pROCENTEBindingSource.EndEdit();

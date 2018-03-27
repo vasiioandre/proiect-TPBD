@@ -334,6 +334,8 @@
             this.sALARIIDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.sALARIIDataGridView.Size = new System.Drawing.Size(1221, 293);
             this.sALARIIDataGridView.TabIndex = 1;
+            this.sALARIIDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.sALARIIDataGridView_DataError);
+            this.sALARIIDataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.sALARIIDataGridView_EditingControlShowing);
             this.sALARIIDataGridView.SelectionChanged += new System.EventHandler(this.sALARIIDataGridView_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn1
@@ -438,6 +440,7 @@
             this.TextBoxCautaAngajat.Size = new System.Drawing.Size(264, 22);
             this.TextBoxCautaAngajat.TabIndex = 5;
             this.TextBoxCautaAngajat.TextChanged += new System.EventHandler(this.TextBoxCautaAngajat_TextChanged);
+            this.TextBoxCautaAngajat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxCautaAngajat_KeyPress);
             // 
             // anulare
             // 
@@ -542,6 +545,7 @@
             this.textBoxPremii.Size = new System.Drawing.Size(209, 22);
             this.textBoxPremii.TabIndex = 14;
             this.textBoxPremii.Text = "0";
+            this.textBoxPremii.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPremii_KeyPress);
             // 
             // textBoxSpor
             // 
@@ -550,6 +554,7 @@
             this.textBoxSpor.Size = new System.Drawing.Size(209, 22);
             this.textBoxSpor.TabIndex = 13;
             this.textBoxSpor.Text = "0";
+            this.textBoxSpor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSpor_KeyPress);
             // 
             // textBoxSalar
             // 
@@ -557,6 +562,7 @@
             this.textBoxSalar.Name = "textBoxSalar";
             this.textBoxSalar.Size = new System.Drawing.Size(209, 22);
             this.textBoxSalar.TabIndex = 12;
+            this.textBoxSalar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSalar_KeyPress);
             // 
             // textBoxRetineri
             // 
@@ -565,6 +571,7 @@
             this.textBoxRetineri.Size = new System.Drawing.Size(209, 22);
             this.textBoxRetineri.TabIndex = 11;
             this.textBoxRetineri.Text = "0";
+            this.textBoxRetineri.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRetineri_KeyPress);
             // 
             // textBoxFunctie
             // 
@@ -572,6 +579,7 @@
             this.textBoxFunctie.Name = "textBoxFunctie";
             this.textBoxFunctie.Size = new System.Drawing.Size(295, 22);
             this.textBoxFunctie.TabIndex = 10;
+            this.textBoxFunctie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFunctie_KeyPress);
             // 
             // textBoxPrenume
             // 
@@ -579,6 +587,7 @@
             this.textBoxPrenume.Name = "textBoxPrenume";
             this.textBoxPrenume.Size = new System.Drawing.Size(295, 22);
             this.textBoxPrenume.TabIndex = 9;
+            this.textBoxPrenume.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrenume_KeyPress);
             // 
             // textBoxNume
             // 
@@ -586,15 +595,16 @@
             this.textBoxNume.Name = "textBoxNume";
             this.textBoxNume.Size = new System.Drawing.Size(295, 22);
             this.textBoxNume.TabIndex = 8;
+            this.textBoxNume.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNume_KeyPress);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(235, 227);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(142, 17);
+            this.label8.Size = new System.Drawing.Size(147, 17);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Selecteaza fotografie";
+            this.label8.Text = "Selecteaza fotografie*";
             // 
             // label7
             // 
@@ -687,7 +697,8 @@
             this.textBoxCautaAngajat3.Name = "textBoxCautaAngajat3";
             this.textBoxCautaAngajat3.Size = new System.Drawing.Size(284, 22);
             this.textBoxCautaAngajat3.TabIndex = 4;
-            this.textBoxCautaAngajat3.TextChanged += new System.EventHandler(this.textBoxCautaAngajat3_TextChanged);
+            this.textBoxCautaAngajat3.TextChanged += new System.EventHandler(this.anulare_Click);
+            this.textBoxCautaAngajat3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCautaAngajat3_KeyPress);
             // 
             // label11
             // 
@@ -873,6 +884,7 @@
             this.textBoxCautaAngajat2.Size = new System.Drawing.Size(233, 22);
             this.textBoxCautaAngajat2.TabIndex = 2;
             this.textBoxCautaAngajat2.TextChanged += new System.EventHandler(this.textBoxCautaAngajat2_TextChanged_1);
+            this.textBoxCautaAngajat2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCautaAngajat2_KeyPress);
             // 
             // pictureBox2
             // 
@@ -1213,6 +1225,7 @@
             this.textBoxStatPlata.Size = new System.Drawing.Size(220, 22);
             this.textBoxStatPlata.TabIndex = 4;
             this.textBoxStatPlata.TextChanged += new System.EventHandler(this.textBoxStatPlata_TextChanged);
+            this.textBoxStatPlata.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxStatPlata_KeyPress);
             // 
             // button2
             // 

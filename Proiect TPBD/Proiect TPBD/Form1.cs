@@ -40,15 +40,49 @@ namespace Proiect_TPBD
             }
         }
 
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            mesaje.Text = "";
+            sALARIIBindingSource.Filter = String.Empty;
+        }
+
+        #region User input validation on update dataGridView
+
+        private void sALARIIDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            sALARIIDataGridView.EditingControl.KeyPress -= EditingControl_KeyPress;
+            sALARIIDataGridView.EditingControl.KeyPress += EditingControl_KeyPress;
+        }
+
+        private void EditingControl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(sALARIIDataGridView.CurrentCell.ColumnIndex == 1 || sALARIIDataGridView.CurrentCell.ColumnIndex == 2 || sALARIIDataGridView.CurrentCell.ColumnIndex == 3)
+            {
+                if (!(char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar)))
+                    e.Handled = true;
+            }
+            else if(sALARIIDataGridView.CurrentCell.ColumnIndex != 4)
+            {
+                if (!(char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar)))
+                    e.Handled = true;
+            }
+        }
+
+        #endregion
+
+        #region Update dataGridView
 
         private void salvare_actualizare_Click(object sender, EventArgs e)
-        {
+        { 
             mesaje.Text = "";
             try
             {
                 this.Validate();
                 this.sALARIIBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.dataSet1);
+
+                sALARIITableAdapter.Dispose();
+                this.sALARIITableAdapter.Fill(this.dataSet1.SALARII);
             }
             catch
             {
@@ -56,6 +90,118 @@ namespace Proiect_TPBD
             }
 
         }
+
+        private void sALARIIDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            try
+            {
+                if (sALARIIDataGridView.SelectedRows.Count > 0)
+                {
+                    mesaje.Text = "";
+                    string img = sALARIIDataGridView.Rows[sALARIIDataGridView.SelectedRows[0].Index].Cells[4].Value.ToString();
+                    if (img != null)
+                    {
+                        pictureBox1.Image = Image.FromFile(img);
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                    }
+                }
+            }
+            catch
+            {
+                pictureBox1.Image = null;
+            }
+
+        }
+
+        private void TextBoxCautaAngajat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void TextBoxCautaAngajat_TextChanged(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            try
+            {
+                string angajat_cautat = "nume like" + "'" + TextBoxCautaAngajat.Text + "*'";
+                sALARIIBindingSource.Filter = angajat_cautat;
+            }
+            catch
+            {
+                mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
+            }
+        }
+
+        private void anulare_adaugare_Click(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            textBoxNume.Text = "";
+            textBoxPrenume.Text = "";
+            textBoxFunctie.Text = "";
+            textBoxCale.Text = "";
+            textBoxSalar.Text = "";
+            textBoxSpor.Text = "0";
+            textBoxPremii.Text = "0";
+            textBoxRetineri.Text = "0";
+        }
+
+        private void sALARIIDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            //DataGridView error prevention
+            e.Cancel = true;
+        }
+
+        #endregion
+
+        #region Validari Adaugare Angajat
+
+        private void textBoxNume_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxPrenume_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxFunctie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsLetter(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxSalar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxSpor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxPremii_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxRetineri_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        #endregion
+
+        #region Adaugare angajat
 
         private void cauta_imagine_Click(object sender, EventArgs e)
         {
@@ -90,14 +236,20 @@ namespace Proiect_TPBD
             try
             {
                 conn.Open();
-                strSQL = "INSERT INTO salarii(nume, prenume, functie, poza, salar_baza, spor, premii_brute, retineri) VALUES(:p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8)";
+
+                if(textBoxCale.Text!=String.Empty)
+                    strSQL = "INSERT INTO salarii(nume, prenume, functie, poza, salar_baza, spor, premii_brute, retineri) VALUES(:p1, :p2, :p3, :p4, :p5, :p6, :p7, :p8)";
+                else
+                    strSQL = "INSERT INTO salarii(nume, prenume, functie, salar_baza, spor, premii_brute, retineri) VALUES(:p1, :p2, :p3, :p5, :p6, :p7, :p8)";
+
                 cmd = new OracleCommand(strSQL, conn);
                 cmd.BindByName = true;
 
                 cmd.Parameters.Add("p1", textBoxNume.Text);
                 cmd.Parameters.Add("p2", textBoxPrenume.Text);
                 cmd.Parameters.Add("p3", textBoxFunctie.Text);
-                cmd.Parameters.Add("p4", textBoxCale.Text);
+                if (textBoxCale.Text != String.Empty)
+                    cmd.Parameters.Add("p4", textBoxCale.Text);
                 cmd.Parameters.Add("p5", textBoxSalar.Text);
                 cmd.Parameters.Add("p6", textBoxSpor.Text);
                 cmd.Parameters.Add("p7", textBoxPremii.Text);
@@ -114,60 +266,9 @@ namespace Proiect_TPBD
             }
             catch
             {
-                mesaje.Text = "Atentie: Angajatul nu a putut fi adaugat in baza de date!";
+                mesaje.Text = "Nu ati introdus toate datele cerute!";
             }
 
-        }
-
-        private void sALARIIDataGridView_SelectionChanged(object sender, EventArgs e)
-        {
-            mesaje.Text = "";
-            try
-            {
-                if (sALARIIDataGridView.SelectedRows.Count > 0)
-                {
-                    mesaje.Text = "";
-                    string img = sALARIIDataGridView.Rows[sALARIIDataGridView.SelectedRows[0].Index].Cells[4].Value.ToString();
-                    if (img != null)
-                    {
-                        pictureBox1.Image = Image.FromFile(img);
-                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-                    }
-                }
-            }
-            catch
-            {
-                pictureBox1.Image = null;
-            }
-
-        }
-
-        private void TextBoxCautaAngajat_TextChanged(object sender, EventArgs e)
-        {
-            mesaje.Text = "";
-            try
-            {
-                string angajat_cautat = "nume like" + "'" + TextBoxCautaAngajat.Text + "*'";
-                sALARIIBindingSource.Filter = angajat_cautat;
-            }
-            catch
-            {
-                mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
-            }
-
-        }
-
-        private void anulare_adaugare_Click(object sender, EventArgs e)
-        {
-            mesaje.Text = "";
-            textBoxNume.Text = "";
-            textBoxPrenume.Text = "";
-            textBoxFunctie.Text = "";
-            textBoxCale.Text = "";
-            textBoxSalar.Text = "";
-            textBoxSpor.Text = "0";
-            textBoxPremii.Text = "0";
-            textBoxRetineri.Text = "0";
         }
 
         private void anulare_Click(object sender, EventArgs e)
@@ -179,32 +280,12 @@ namespace Proiect_TPBD
             mesaje.Text = "S-au anulat modificarile facute";
         }
 
-        private void tabControl1_Selected(object sender, TabControlEventArgs e)
-        {
-            mesaje.Text = "";
-            sALARIIBindingSource.Filter = String.Empty;
-        }
-
         private void textBoxCautaAngajat2_TextChanged_1(object sender, EventArgs e)
         {
             mesaje.Text = "";
             try
             {
                 string angajat_cautat = "nume like" + "'" + textBoxCautaAngajat2.Text + "*'";
-                sALARIIBindingSource.Filter = angajat_cautat;
-            }
-            catch
-            {
-                mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
-            }
-        }
-
-        private void textBoxCautaAngajat3_TextChanged(object sender, EventArgs e)
-        {
-            mesaje.Text = "";
-            try
-            {
-                string angajat_cautat = "nume like" + "'" + textBoxCautaAngajat3.Text + "*'";
                 sALARIIBindingSource.Filter = angajat_cautat;
             }
             catch
@@ -235,9 +316,26 @@ namespace Proiect_TPBD
             }
         }
 
+        #endregion
+
+        #region Stergere angajat
+
+        private void textBoxCautaAngajat3_TextChanged(object sender, EventArgs e)
+        {
+            mesaje.Text = "";
+            try
+            {
+                string angajat_cautat = "nume like" + "'" + textBoxCautaAngajat3.Text + "*'";
+                sALARIIBindingSource.Filter = angajat_cautat;
+            }
+            catch
+            {
+                mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
+            }
+        }
+
         string nr_crt_selectat = String.Empty;
 
-        #region DataGridView Stergere angajat
         private void sALARIIDataGridView2_SelectionChanged(object sender, EventArgs e)
         {
             mesaje.Text = "";
@@ -259,9 +357,7 @@ namespace Proiect_TPBD
                 pictureBox3.Image = null;
             }
         }
-        #endregion
 
-        #region stergere_angajat
         private void button_stergere_angajat_Click(object sender, EventArgs e)
         {
             try
@@ -299,7 +395,7 @@ namespace Proiect_TPBD
 
         #endregion
 
-        #region ajutor
+        #region Ajutor
         private void toolStripButtonAjutor_Click(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex == 0)
@@ -324,11 +420,22 @@ namespace Proiect_TPBD
 
         private void toolStripButton_modificare_procente_Click(object sender, EventArgs e)
         {
-            FormProcente f = new FormProcente();
-            f.Show();
+            try
+            {
+                FormProcente f = new FormProcente();
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    sALARIITableAdapter.Dispose();
+                    this.sALARIITableAdapter.Fill(this.dataSet1.SALARII);
+                }
+            }
+            catch(Exception)
+            {
+
+            }
         }
 
-        #region stat plata
+        #region Stat plata
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -351,7 +458,7 @@ namespace Proiect_TPBD
 
         #endregion
 
-        #region fluturasi
+        #region Fluturasi
         
         private void button2_Click(object sender, EventArgs e)
         {
@@ -370,13 +477,11 @@ namespace Proiect_TPBD
                 raport.SetDataSource(d);
                 crystalReportViewer2.ReportSource = raport;
             }
-            catch(Exception ex)
+            catch(Exception)
             {
-                MessageBox.Show(ex.Message);
+                
             }
         }
-
-        #endregion
 
         private void textBoxStatPlata_TextChanged(object sender, EventArgs e)
         {
@@ -389,6 +494,29 @@ namespace Proiect_TPBD
             {
                 mesaje.Text = "Nu se poate realzia filtrarea dupa nume";
             }
+        }
+
+
+
+
+        #endregion
+
+        private void textBoxCautaAngajat3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxCautaAngajat2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private void textBoxStatPlata_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsControl(e.KeyChar) || char.IsLetter(e.KeyChar)))
+                e.Handled = true;
         }
     }
 }
